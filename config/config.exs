@@ -1,5 +1,5 @@
 import Config
 
 config :nostrum,
-       token: "dev token goes here" 
-       num_shards: 2
+       token: System.get_env("DISCORD_BOT_KEY"),
+       num_shards: :auto

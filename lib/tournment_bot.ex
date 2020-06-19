@@ -1,14 +1,16 @@
-defmodule ExampleSupervisor do
-  def start_link do
-    import Supervisor.Spec
+defmodule YourBot.Application do
+  use Application
 
-    children = [ExampleConsumer]
+  def start(_, _) do
+    children = [
+      TournamentConsumer
+    ]
 
-    Supervisor.start_link(children, strategy: :one_for_one)
+    Supervisor.start_link(children, strategy: :one_for_one, name: ExampleSupervisor)
   end
 end
 
-defmodule ExampleConsumer do
+defmodule TournamentConsumer do
   use Nostrum.Consumer
 
   alias Nostrum.Api
@@ -36,8 +38,6 @@ defmodule ExampleConsumer do
     end
   end
 
-  # Default event handler, if you don't include this, your consumer WILL crash if
-  # you don't have a method definition for each event type.
   def handle_event(_event) do
     :noop
   end

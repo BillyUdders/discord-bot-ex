@@ -11,9 +11,9 @@ defmodule TournmentBot.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {YourBot.Application, []},
       extra_applications: [:logger]
     ]
   end
