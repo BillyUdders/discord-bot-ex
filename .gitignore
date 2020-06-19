@@ -23,6 +23,7 @@ erl_crash.dump
 tournament_bot_ex-*.tar
 
 
+.idea/
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm,elixir,direnv
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm,elixir,direnv
 
